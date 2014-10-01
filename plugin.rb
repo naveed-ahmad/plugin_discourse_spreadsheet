@@ -1,4 +1,4 @@
-# name: google-calendar
+# name: Google Spreadsheet Onebox
 # version: 0.1
 # authors: Daniel Fernández
 
@@ -9,6 +9,7 @@ class Onebox::Engine::SpreadsheetOnebox
   matches_regexp(/^https?:\/\/(?:www\.)?(?:m\.)?(?:docs\.google\.com\/spreadsheet)\/.+$/)
 
   def to_html
-    "<iframe src='#{@url}&rm=minimal' style='border: 0' width='800' height='600' frameborder='0' scrolling='no'></iframe>"
+    url = @url.split('&').first
+    "<iframe src='#{url}&rm=minimal' style='border: 0' width='800' height='600' frameborder='0' scrolling='no' ></iframe>"
   end
 end
