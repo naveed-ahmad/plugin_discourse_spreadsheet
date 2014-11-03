@@ -6,7 +6,7 @@
 class Onebox::Engine::SpreadsheetOnebox
   include Onebox::Engine
 
-  matches_regexp(/^https?:\/\/(?:www\.)?(?:m\.)?(?:docs\.google\.com\/spreadsheet)\/.+$/)
+  matches_regexp(/^https?:\/\/(?:www\.)?(?:m\.)?(?:docs\.google\.com\/(spreadsheet|spreadsheets))\/.+$/)
 
   def to_html
     url = @url.split('&').first
